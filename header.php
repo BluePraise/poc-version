@@ -22,90 +22,22 @@ global $woo_options, $woocommerce;
 
 <title><?php woo_title(''); ?></title>
 <?php woo_meta(); ?>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.css">
     <!--[if IE 7]>
-	<link rel="stylesheet" href="css/font-awesome-ie7.css">
-	<![endif]-->
-	<link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
-
-	<link rel="stylesheet" href="http://fonts.typotheque.com/WF-001368-007151.css" type="text/css" />
-	<?php
-	wp_head();
-	//woo_head();
-	?>
-	
-	<script type="text/javascript">
-
-	/*user define css*/
-			
-			jQuery(document).ready(function(){
-			var docHeight = jQuery(document).height();
-			jQuery(".loader_full").height(50);
-				});
-			
-			function changetheme(){
-		
-			 var check  = "<?php 
-			 if(session_id() == ''){
-			session_start();
-			}
-			echo $_SESSION['user_visit'];?>";
-			var url = "<?php bloginfo('stylesheet_directory'); ?>";
-			
-			
-			if(check!='') {
-				
-			jQuery('body').removeClass('day');
-			jQuery('body').removeClass('night')
-			jQuery('body').addClass(check);
-			jQuery('#'+check).addClass('active');
-			jQuery('.loader_full').hide();
-			jQuery('.main_site').show();
-			}else{
-				  var dt = new Date();
-				  var day =dt.getDate();
-				  var month = parseInt(dt.getMonth()) + 1 ;
-				  var h = dt.getHours() ;
-				  var m =dt.getMinutes()
-				  var s =dt.getSeconds();
-					  jQuery.ajax({
-					  url:url+'/ajax.php?day='+day+'&month='+month+'&h='+h+'&m='+m+'&s='+s+'&callback=?',
-					  type:'GET',
-					  success:function(html){
-						
-						jQuery('body').removeClass('day');
-						jQuery('body').removeClass('night')
-						jQuery('body').addClass(html);
-						jQuery('#'+html).addClass('active');
-						jQuery('.loader_full').hide();
-						jQuery('.main_site').show();
-					  }
-					  })
-			
-			}
-	}
-		
-		
-	</script>
-	
- 
+  <link rel="stylesheet" href="css/font-awesome-ie7.css">
+  <![endif]-->
+  <link rel="stylesheet" href="http://fonts.typotheque.com/WF-001368-007151.css" type="text/css" />
+  <?php wp_head(); ?>
 
 </head>
 
 <body <?php body_class(); ?> onLoad="changetheme();">
-<div class="loader_full"><img alt="Loading..." src="<?php bloginfo('stylesheet_directory'); ?>/img/728.GIF" /></div>
-<?php woo_top(); ?>
-		
-		
-		
-		
-	<div class="main_site" style="display:none;">	
-		 <!--Start Header-->
-    <div id="mg_header">
-	
+  <?php woo_top(); ?>
+
+<div class="main_site">
+ <!--Start Header-->
+  <div id="mg_header">
+
 		<!-- bluish bar-->
 		<?php if($woocommerce->cart->get_cart_contents_count() && $woocommerce->cart->get_cart_contents_count()!=0 ) { ?>
 		<div class="mg_submenu_block_head">
@@ -114,58 +46,58 @@ global $woo_options, $woocommerce;
 						<ul>
 						<?php $items = wp_get_nav_menu_items('cart');
 						foreach($items as $menu_items){ ?>
-						<li><a href="<?php echo $menu_items->url; ?>" <?php if(is_page( $menu_items->object_id)){ ?>class="active_top"<?php } ?>><?php echo $menu_items->title; ?></a></li> 
+						<li><a href="<?php echo $menu_items->url; ?>" <?php if(is_page( $menu_items->object_id)){ ?>class="active_top"<?php } ?>><?php echo $menu_items->title; ?></a></li>
 						<?php } ?>
 						</ul>
 						</div>
-						
-						
+
+
 						<div class="col-xs-12 col-sm-6 col-md-6 " >
 						<?php do_action( 'woocommerce_before_single_product' );?>
 						</div>
-						
-						
+
+
 						<div class="col-xs-12 col-sm-3 col-md-3 " >
 						<?php //do_action( 'woocommerce_before_single_product' ); ?>
 							<?php if ( class_exists( 'woocommerce' ) ) {
 									echo '<ul class="mg_tpmenu_rgt">';
-									
+
 									woocommerce_cart_link();
 									//echo '<li class="checkout"><a href="'.esc_url($woocommerce->cart->get_checkout_url()).'">'.__('Checkout','woothemes').'</a></li>';
 									//echo get_search_form();
 									echo '<li class="cart_text"><strong>Cart</strong></li>';
 									echo '</ul>';
 								}
-							
-							?>							
-							
-							
+
+							?>
+
+
 						</div>
 					</div>
 				</div>
 				<?php } ?>
 				<!-- bluish bar-->
-				
+
     	<div class="mg_header_in">
         	<div class="row">
 						<div class="col-xs-12 col-sm-10 col-md-10">
 						 <?php
 						$logo = esc_url( get_template_directory_uri() . '/images/logo.png' );
-						
-					
+
+
 						if (  is_ssl() ) { $logo = preg_replace("/^http:/", "https:", $woo_options['woo_logo']); }
 					?>
-					
+
 						<a id="logo" class="mg_logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( get_bloginfo( 'description' ) ); ?>">
 							<img src="<?php echo $logo; ?>" alt="<?php esc_attr( get_bloginfo( 'name' ) ); ?>" />
 						</a>
-			
+
 							<?php wp_nav_menu( array('menu' => 'home' )); ?>
-                
+
                     <div class="mg_tpnav">
-                      
+
 						<?php
-					
+
 							if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
 								wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => false, 'menu_id' => 'main-nav', 'menu_class' => 'mg_tpmenu', 'theme_location' => 'primary-menu' ) );
 							} else {
@@ -175,12 +107,12 @@ global $woo_options, $woocommerce;
 								<li class="<?php echo $highlight; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
 								<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
 							</ul><!-- /#nav -->
-							<?php } ?> 
-									
-					
-						
-					
-                        
+							<?php } ?>
+
+
+
+
+
                         <!-- Start Navigation fot Phione Device Only -->
                        <!-- <div class="mobile_navigation">
                         <select class="col-xs-12 visible-phone">
@@ -188,53 +120,53 @@ global $woo_options, $woocommerce;
                             <option value="#">Custom Design</option>
                             <option value="#">Blog</option>
                             <option value="#">About</option>
-                            <option value="#">Contact</option>                                         
+                            <option value="#">Contact</option>
                         </select>
                         <!-- End Navigation fot Phione Device Only -->
                         <!--<div class="clear"></div>
                        </div>-->
                     </div></div>
-               
+
                 <div class="col-xs-12 col-sm-2 col-md-2">
                     <div class="mg_search_box">
-					
+
 				     <?php $form = '<form role="search" method="get" id="searchform" action="' . esc_url(home_url( '/' )) . '" >
                           <input type="" results=5 autosave="'. esc_url(home_url( '/' )) .'" class="col-xs-12 col-sm-12 col-md-12" placeholder="'. esc_attr__('Search', 'woothemes') .'" name="s" id="s" />
                           <button type="submit" id="searchsubmit" class="mg_search_icon"></button>
 						  </form>';
 
 						echo $form; ?>
-						
-						
+
+
                     </div>
                 </div>
             </div>
         </div>
 				<div class="clear"></div>
-				
-				
-				
+
+
+
 							<div class="mg_submenu_block">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12" class="submenu">
 								<ul class="mg_submenu">
 								</ul>
-								
-					
-						
-							
+
+
+
+
 							<div class="clear"></div>
 						</div>
 					</div>
 				</div>
-				
-				
-				
-				
+
+
+
+
     </div>
-    
+
     <!--End Header-->
-		
+
 
 
 		<?php woo_header_before(); ?>

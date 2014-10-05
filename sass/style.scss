@@ -1,1 +1,16 @@
+/*!
+Theme Name: Poc Version Mystile Child Theme
+Description: Mystile Customized WooCommerce theme
+Author: Magalie Linda
+Template: mystile
+*/
+
+@import "compass";
 @import "susy";
+@import "tools/_variables.scss";
+@import "tools/_mixins.scss";
+@import "tools/_normalize.scss";
+@import "tools/_overrides.scss";
+@import "tools/_fonts.scss";
+@import "partials/_page.scss";
+@import "partials/_sitewide.scss";
