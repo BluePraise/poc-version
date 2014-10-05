@@ -1,26 +1,7 @@
 <?php
-
 add_theme_support( 'woocommerce' );
 ob_start();
 
-remove_action( 'wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
-remove_action( 'wp_head', 'feed_links_extra'); // Display the links to the extra feeds such as category feeds
-remove_action( 'wp_head', 'feed_links'); // Display the links to the general feeds: Post and Comment Feed
-remove_action( 'wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
-remove_action( 'wp_head', 'index_rel_link' ); // index link
-remove_action( 'wp_head', 'parent_post_rel_link', 10); // prev link
-remove_action( 'wp_head', 'start_post_rel_link', 10); // start link
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10); // Display relational links for the posts adjacent to the current post.
-
-function remove_wp_ver_css_js( $src ) {
-    if ( strpos( $src, 'ver=' ) )
-        $src = remove_query_arg( 'ver', $src );
-    return $src;
-}
-
-add_filter( 'style_loader_src', 'remove_wp_ver_css_js', 9999 ); // remove WP version from css
-add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 ); // remove Wp version from scripts
 //Override some of the WooThemes framework
 function mystile_custom_before_quick_nav() { woo_do_atomic( 'mystile_custom_before_quick_nav' ); }
 function mystile_custom_move_breadcrumbs() {
@@ -32,7 +13,7 @@ add_action('after_setup_theme','mystile_custom_move_breadcrumbs');
 
 //If user logged in then display VIP otherwise dont.
 function mystile_custom_hide_VIP_products( $q ) {
-
+ 
 	 if (!is_user_logged_in()) {
 		if ( ! $q->is_main_query() ) return;
 		if ( ! $q->is_post_type_archive() ) return;
@@ -96,45 +77,45 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 
 // Our hooked in function - $fields is passed via the filter!
 function custom_override_checkout_fields( $fields ) {
-   $fields['billing']['Licence_owner'] = array (
+     $fields['billing']['Licence_owner'] = array(
     'label'     => __("Who's this font stuff for?", 'woocommerce'),
     'placeholder'   => _x('Licence Owner (optional)', 'placeholder', 'woocommerce'),
     'required'  => false,
     'class'     => array('form-row-wide'),
     'clear'     => true
-   );
+     );
 
-   return $fields;
+     return $fields;
 }
 
 
-function wptuts_scripts_basic() {
+function wptuts_scripts_basic()
+{
    $url =  get_bloginfo('stylesheet_directory');
     // Register the script like this for a theme:
 
-	 //  wp_register_script( 'jqueryui',  $url.'/js/jquery-ui.js' );
-		// wp_enqueue_script( 'jqueryui' );
-
-	 //  wp_register_script( 'custom-script',  $url.'/js/custom.js' );
-		// 	wp_enqueue_script( 'custom-script' );
-
-		// 	wp_register_script( 'tool-script',  $url.'/js/tooltip.js' );
-		// 	wp_enqueue_script( 'tool-script' );
-
+	  wp_register_script( 'jqueryui',  $url.'/js/jquery-ui.js' );
+		wp_enqueue_script( 'jqueryui' );
+	
+	  wp_register_script( 'custom-script',  $url.'/js/custom.js' );
+			wp_enqueue_script( 'custom-script' );
+			
+			wp_register_script( 'tool-script',  $url.'/js/tooltip.js' );
+			wp_enqueue_script( 'tool-script' );
 }
 //add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
 
-add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false')
 
-wp_register_style('stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
-wp_enqueue_style( 'stylesheet' );
+?>
 
 
+<?php
 /*custom post for portfolio*/
 
 function post_type_portfolio() {
 register_post_type(
-                    'portfolio',
+                    'portfolio', 
                     array( 'public' => true,
 					 		'publicly_queryable' => true,
 							'hierarchical' => false,
@@ -149,88 +130,19 @@ register_post_type(
     									'view_item' => __('View portfolio post'),
     									'search_items' => __('Search portfolio post'),
     									'not_found' =>  __('No Portfolio found'),
-    									'not_found_in_trash' => __('No Portfolio found in Trash'),
+    									'not_found_in_trash' => __('No Portfolio found in Trash'), 
     									'parent_item_colon' => ''
-  										),
+  										),							 
                             'show_ui' => true,
 							'menu_position'=>5,
-
-
+							
+							
                             'supports' => array(
 							 			'title',
 										'thumbnail','editor','excerpt'
 										)
-							)
+							) 
 					);
-				}
+				} 
 add_action('init', 'post_type_portfolio');
 /**/
-//remove_filter('the_content', 'wpautop');
-
-
-// Show trailing zeros on prices, default is to hide it.
-//add_filter( 'woocommerce_price_trim_zeros', 'wc_hide_trailing_zeros', 10, 1 );
-
-/*function wc_hide_trailing_zeros( $trim ) {
-    // set to false to show trailing zeros
-    return true;
-}*/
-
-
-
-
-
-add_action( 'wp_ajax_my_action', 'my_action_callback' );
-add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
-
-
-
-
-
-add_action( 'wp_ajax_my_action', 'my_action_callback' );
-
-function my_action_callback() {
-$limitstart=$_POST['limitstart'];
-
-
-								$args     = array( 'post_type' => 'post', 'order'=>'DESC','offset' => $limitstart);
-								$blog = new WP_Query($args);
-							    $count=0;
-								$j=2;
-								if($blog->have_posts()) {
-								while ( $blog->have_posts() ) : $blog->the_post();
-
-								?>
-										 <div  class="blogpost" >
-										 <div class="dt_bp_head">
-											<h1><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h1>
-											<span class="mg_phone_tagline"><?php the_time( 'M' ); ?> <?php the_time( 'd' ); ?>, <?php the_time( 'o' ); ?>.
-											<?php $tags =  wp_get_post_tags($post->ID);
-														$i = 0;
-														$len = count($tags);
-														foreach ($tags as $tag){ $i++; ?>
-														<a href="javascript:void(0)"><?php
-														   if($i==$len){echo $tag->name."<span class='textc'>.</span>";}else {echo $tag->name."<span class='textc'>,</span>";} ?>
-													   </a>
-														  <?php } ?>
-														</span>
-										</div>
-
-										<div class="dt_post_content">	<?php the_content();?></div>
-
-											 <hr>
-										</div>
-
-
-
-
-
-								<?php endwhile; ?>
-
-								<?php  } else { echo 0; }
- // echo $content;
-
-die;
-}
-
-

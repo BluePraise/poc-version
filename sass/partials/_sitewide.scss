@@ -1,7 +1,0 @@
-.container {
-  overflow: hidden;
-  @include container();
-  @if ($show-grid-backgrounds) {
-    @include susy-grid-background;
-  }
-}

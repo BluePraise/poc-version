@@ -1,8 +1,23 @@
 /*
-Theme Name: Poc Version Mystile Child Theme
-Description: Mystile Customized WooCommerce theme
-Author: Magalie Linda
+Theme Name: Mystile Child Theme
+Description: Mystile Customized WooCommerce theme 
+Author: Seth Rubenstein
 Template: mystile
 */
+@import url("../mystile/style.css");
+@import url("css/bootstrap-theme.css");
+@import url("css/bootstrap.css");
 
-@import url("stylesheets/style.css");
+@import url("css/font-awesome-ie7.css");
+@import url("css/custom.css");
+@import url("css/font-awesome.css");
+@import url("css/jquery-ui.css");
+@import url("css/tooltip.css");
+
+
+
+
+a.button, a.comment-reply-link, #commentform #submit, .submit, input[type="submit"], input.button, button.button {
+   
+}
+

@@ -1,0 +1,56 @@
+
+
+
+ /*----------Night css Start--------------*/
+
+body.night { background:#000; }
+body.night #container_block h2 { color:#ccc; }
+#container_block .text06 { color:#9A9A9A;}
+body.night #container_block .text05 { color:#fff; }
+body.night #container_block  strong{ color:#fff; }
+body.night #container_block .mg_shop_product .mg_dimation_list li { color:#9A9A9A ; }
+body.night #container_block .mg_shop_product .mg_size_block .mg_price_pro { color:#fff; }
+body.night #container_block .btn { background-color: #f26d7e !important; border-color: #f26d7e !important; color: #FFFFFF; }
+body.night #container_block .btn:hover { background-color: #ed6072 !important; }
+body.night #container_block  h3 { color:#f26d7e !important; }
+body.night #container_block  h3:hover { color:#378cc2 !important; }
+body.night #container_block p { color:#9A9A9A; }
+body.night #container_block .text07 a { color:#f26d7e !important; }
+body.night input[type="submit"] { -moz-user-select: none; background-color: #f26d7e !important; background-image: none; border: 1px solid #f26d7e !important; border-radius: 0px ; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075) !important; color: #FFFFFF !important; cursor: pointer; display: inline-block; font-size: 14px !important; font-weight: normal !important; line-height: 1.42857; padding: 8px 12px !important; text-align: center; text-shadow: none !important; vertical-align: middle; white-space: nowrap; }
+
+body.night #container_block hr { border-color:#444444 !important;}
+body.night #container_block .mg_main_font_block .mg_font_block .mg_font_name { color:#fff; }
+body.night #container_block .mg_main_font_block .mg_font_block .mg_font_dec { color:#6D7578; }
+body.night #container_block .mg_product_block .mg_product_block_in {/* box-shadow: 0 0 1px #5F5F5F;*/ }
+body.night #container_block .mg_product_block .mg_product_block_in .product_name { color:#f26d7e ; }
+body.night #container_block .mg_product_block .mg_product_block_in:hover .product_name { color:#3686c5; }
+body.night #container_block .mg_list_style li { color:#9A9A9A; }
+body.night #container_block .text07 { color:#fff; }
+body.night #container_block .textc{ color:#fff; }
+body.night #container_block .mg_edit_block { border: 1px solid #434343; background:#000; }
+body.night #container_block .mg_tab_block .tab_button li a { color: #939393; }
+body.night .mg_price_pro { color:#fff; }
+body.night #container_block .mg_tab_block .tab_button { display:block; margin:0px; padding:0px; height:29px; list-style:none; border-bottom:1px solid #434343; }
+body.night #container_block .mg_tab_block .tab_button li.cc_active a { border-left:1px solid #434343; border-right:1px solid #434343; border-top:1px solid #434343; border-bottom:1px solid #000;  height:43px; color:#F26D7E !important ; }
+body.night #container_block .mg_edit_block .mg_edit_block_in select { background: none repeat scroll 0 0 #D3D3D3; color: #000000; }
+body.night .ui-widget-content { background: none repeat scroll 0 0 #FFFFFF; color: #222222; }
+body.night #container_block .mg_checkout_block .mg_checkout_block_in .mg_deal_block { background:#000 !important; }
+body.night #container_block .mg_checkout_block .mg_checkout_block_in .mg_deal_head { color:#666; }
+body.night #container_block .mg_checkout_block .mg_checkout_block_in .mg_deal_block .mg_deal_name a { color:#f26d7e; }
+body.night #container_block .mg_checkout_block .mg_checkout_block_in .mg_deal_block .mg_deal_name { color:#fff; }
+body.night #container_block .mg_checkout_block .mg_checkout_block_in .mg_deal_head3 { color:#fff; }
+body.night #container_block input { border: 1px solid #707070; }
+body.night #container_block .mg_checkout_block .mg_checkout_block_in .mg_deal_name { color:#fff; }
+/*body.night #container_block .mg_login_block { margin-top:40px;  }*/
+body.night .col-1 .logo_container{color:#fff;}
+body.night #container_block .mg_login_block .mg_login_block_in { background:#202022; }
+body.night .col-1 .logo_container { font-size:70px; }
+body.night #mg_footer_block { background: none repeat scroll 0 0 #131313; border-top: 1px solid #202020; border-top:none; }
+body.night .detail_btn { display:block; background:#f26d7e; padding:4px 20px; border:none; color:#fff; float:right; margin-left:5px; }
+body.night .detail_btn:hover { background:#e66071;}
+body.night #mg_header .mg_submenu_block .mg_submenu li a:hover, a:focus {
+    color: #fff;
+}
+
+ 
+ 

@@ -13,47 +13,49 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
  * @package WooFramework
  * @subpackage Template
  */
-  get_header();
-  global $woo_options;
+	get_header();
+	global $woo_options;
 ?>
-
-    <div id="content" class="container">
-
-      <?php woo_main_before(); ?>
-
-    <section id="main">
-
+       
+    <div id="container_block">
+    	<div class="container">
+    
+    	<?php woo_main_before(); ?>
+    	
+		<section id="main" class="fullwidth">
+           
         <?php
-          if ( have_posts() ) { $count = 0;
-            while ( have_posts() ) { the_post(); $count++;
-        ?>
+        	if ( have_posts() ) { $count = 0;
+        		while ( have_posts() ) { the_post(); $count++;
+        ?>                                                             
                 <article <?php post_class(); ?>>
-
-          <header>
-            <h1><?php the_title(); ?></h1>
-          </header>
-
+					
+					<header>
+						<h1><?php //the_title(); ?></h1>
+					</header>
+                    
                     <section class="entry">
-                    <?php the_content(); ?>
-                  </section><!-- /.entry -->
+	                	<?php the_content(); ?>
+	               	</section><!-- /.entry -->
 
-          <?php edit_post_link( __( '{ Edit }', 'woothemes' ), '<span class="small">', '</span>' ); ?>
+					<?php edit_post_link( __( '{ Edit }', 'woothemes' ), '<span class="small">', '</span>' ); ?>
 
                 </article><!-- /.post -->
-
-      <?php
-          } // End WHILE Loop
-        } else {
-      ?>
-        <article <?php post_class(); ?>>
-                  <p><?php _e( 'Sorry, no posts matched your criteria.', 'woothemes' ); ?></p>
+                                                    
+			<?php
+					} // End WHILE Loop
+				} else {
+			?>
+				<article <?php post_class(); ?>>
+                	<p><?php _e( 'Sorry, no posts matched your criteria.', 'woothemes' ); ?></p>
                 </article><!-- /.post -->
-            <?php } ?>
-
-    </section><!-- /#main -->
-
-    <?php //woo_main_after(); ?>
-
+            <?php } ?>  
+        
+		</section><!-- /#main -->
+		
+		<?php //woo_main_after(); ?>
+		
+     </div>
     </div><!-- /#content -->
-
+		
 <?php get_footer(); ?>

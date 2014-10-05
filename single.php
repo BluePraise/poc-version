@@ -43,22 +43,20 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
                 <div class="mg_blog_block">
                 	<div class="row">
             	        <div class="col-xs-12 col-sm-12 col-md-12">
-						<div id="all_blog" class="dt_block_post">
 		           
         <?php
         	if ( have_posts() ) { $count = 0;
         		while ( have_posts() ) { the_post(); $count++;
         ?>
-				<div class="dt_bp_head">
+			
 				<header>
-					<div class="content-text"><h1><?php the_title(); ?></h1>
+					<div class="content-text"><h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 				<span class="text07"><?php the_time( 'M' ); ?> <?php the_time( 'd' ); ?>, <?php the_time( 'o' ); ?>. 
 				<?php $tags =  wp_get_post_tags($post->ID);
-				
 						$i = 0;
 						$len = count($tags);	
 							foreach ($tags as $tag){ $i++; ?>
-								<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ).'tag/'.$tag->slug;?>"><?php 
+								<a href="javasript:void(0)"><?php 
 							   if($i==$len){echo $tag->name."<span class='textc'>.</span>";}else {echo $tag->name."<span class='textc'>,</span>";} ?>
                            </a>
 							  <?php } ?>	
@@ -68,13 +66,11 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 				</span>
 				</div>
 				</header>
-				</div>
-					<div class="dt_post_content">
+	
 					<section class="entry fix">
 	                	<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'woothemes' ), 'after' => '</div>' ) ); ?>
 					</section>
-					</div>
 			 	
                                 
            
@@ -99,18 +95,14 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 			</article><!-- .post -->             
        	<?php } ?>  
         
-						</div>
-						</div>
+	
+		  </div>
                     </div>	
                 </div>
             </div>
         </div>
     <!--End Container-->
-		<script>
-		jQuery(document).ready(function(){
-		jQuery(".menu-item-90").addClass('current_page_item');
-		})
-		</script>
+		
 
 		
 <?php get_footer(); ?>
