@@ -1,0 +1,11 @@
+# Ignore Codekit Config
+*.codekit
+
+# Ignore OSX generated .DS_Store files
+.DS_Store
+
+# Ignore sass cache
+.sass-cache
+
+# Ignore bower components
+/bower_components
