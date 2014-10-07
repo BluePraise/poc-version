@@ -32,9 +32,9 @@
 @font-face{ font-family: BerninoSans-Web-CompSemibold;  font-weight: bold;   src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-CompressedSemibold");}
 @font-face{ font-family: BerninoSans-Web-Comp;          font-weight: bold;   src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-CompressedBold");}
 @font-face{ font-family: BerninoSans-Web-CompExtrabold; font-weight: bold;   src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-CompressedExtrabold");}
-			
 
-a { -webkit-transition: all 200ms linear; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; transition:all 200ms linear; cursor:pointer;  }
+
+a { -webkit-transition: all 200ms linear; -moz-transition: all 200ms lism-8mnear; -o-transition: all 200ms linear; transition:all 200ms linear; cursor:pointer;  }
 a:hover, a:active { text-decoration:none !important; }
 a:focus { outline:none; }
 ::-moz-selection { color: #fff; background:#1d93bd; text-shadow:none; }
@@ -80,9 +80,9 @@ body { margin:0px ; padding:0px; background:#fff; font-family:BerninoSans-Web; p
 #container_block  h3:hover { color:#f26d7e; }
 #container_block  h4 { display:block; font-size:25px; padding-bottom:15px; text-align:left; font-weight:bold; color:#666;  }
 #container_block  p { display:block; font-size:20px; padding-bottom:10px; text-align:left; font-weight:normal; font-family:BerninoSans-Web-NarrowLight; color:#6C6C6C; }
-#container_block .mg_list_style { display:block; list-style:disc; margin-bottom:10px; } 
+#container_block .mg_list_style { display:block; list-style:disc; margin-bottom:10px; }
 #container_block .mg_list_style li { padding:3px 0px; font-size:18px; color:#6C6C6C; margin-left:15px;  }
-#container_block .mg_list_style2 { display:block; list-style:none; margin-bottom:10px; } 
+#container_block .mg_list_style2 { display:block; list-style:none; margin-bottom:10px; }
 #container_block .mg_list_style2 li { padding:3px 0px; font-size:18px; color:#6C6C6C;  }
 #container_block .mg_list_style2 li span { font-size:22px; }
 #container_block .mg_main_font_block .mg_font_block .mg_font_style { display:block; font-size:150px; font-weight:bold; margin:0px; padding:0px 0px 10px 0px !important; line-height:145px; text-align:left; }
@@ -119,7 +119,7 @@ hr { margin-bottom:20px; }
 #container_block .mg_edit_block .mg_edit_block_in .mg_edit_list li { display:block; float:left; padding:0px 5px; margin:0px;  }
 #container_block .mg_edit_block .mg_edit_block_in .mg_edit_list li.mg_slide { width:252px; margin-top:0px; }
 #container_block .mg_edit_block .mg_edit_block_in .mg_edit_list li.mg_slide .mg_slider_btn { border-radius:50% !important; background:#4885bb !important; border:0 !important; }
-#container_block .mg_edit_block .mg_edit_block_in .mg_edit_list li.mg_a { text-align:center; } 
+#container_block .mg_edit_block .mg_edit_block_in .mg_edit_list li.mg_a { text-align:center; }
 #container_block .mg_bg { background:#000 !important; }
 #container_block .mg_bg2 { background:#2b2c30 !important; border:0px solid #2b2c30 !important; }
 #container_block .mg_bg3 { background:#fff !important; }
@@ -276,7 +276,7 @@ div.quantity {
     margin-top: -7px;
     white-space: nowrap;
 	width:80%;
-   
+
 }
 
 .col-1 .logo_container{
@@ -296,7 +296,7 @@ color: #40474d;
 
 
 /* ===================================== Screen Resolution CSS ===================================== */
- 
+
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px){
 #mg_header mg_header_in .mg_tpnav .mg_tpmenu li a { font-size:16px; padding:0px 5px; }
@@ -337,7 +337,7 @@ color: #40474d;
 #container_block { margin:170px auto 50px auto; }
 #container_block .mg_edit_block .mg_edit_block_in .mg_edit_list { margin-top:10px; }
 #container_block .mg_edit_block .mg_edit_block_in .mg_edit_list li.mg_slide { width:80%; }
-#container_block .mg_edit_block .mg_edit_block_in .mg_edit_list li.mg_a { width:10%; } 
+#container_block .mg_edit_block .mg_edit_block_in .mg_edit_list li.mg_a { width:10%; }
 #container_block .mg_shop_product .mg_size_block .mg_size_block_in { padding:6px 0 1px; }
 #container_block .mg_checkout_block .mg_checkout_block_in .mg_deal_block .mg_deal_head2 { display:block; padding-bottom:5px; text-align:left; }
 #container_block .mg_checkout_block .mg_checkout_block_in .mg_deal_block .mg_deal_head { display:none; }
@@ -392,7 +392,7 @@ font-weight:normal;
  form{
  margin:0;
  }
- 
+
  #container_block .mg_checkout_block .mg_checkout_block_in .mg_cross {
     font-size: 17px;
     position: absolute;
@@ -420,7 +420,7 @@ input[type="submit"]{
 	box-shadow:0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075)!important;
 	background-clip:none!important;
 	text-shadow:none!important
-	
+
 }
 
 a.button:hover, a.comment-reply-link:hover, #commentform #submit:hover, .submit:hover, input[type="submit"]:hover, input.button:hover, button.button:hover {
@@ -443,9 +443,9 @@ a.button:hover, a.comment-reply-link:hover, #commentform #submit:hover, .submit:
 padding-bottom: 0px!important;
 }
 .form-row {
-   
+
     margin-bottom: 0px!important;
-    
+
 }
 
 .checkout #order_review {
@@ -475,7 +475,7 @@ border-radius:none!important;
 border-radius:none!important;
   box-shadow:none!important;
  }
- 
+
  .responsiveMenuSelect{
   border: 0 none;
     border-radius: 0 !important;
@@ -484,9 +484,9 @@ border-radius:none!important;
     padding: 5px;
 	margin-bottom:0px;
  }
- 
+
  .output { padding-top:0px;}
- 
+
  /*for font preview*/
 	 #text{
 	font-size:.2em;
@@ -504,7 +504,7 @@ border-radius:none!important;
     border-radius: none!important;
      box-shadow: none!important;
 	}
-	
+
 	#text:focus {
     background: none !important;
     border-color:#CCCCCC !important;
@@ -532,7 +532,7 @@ color:#fff!important;
 }
  /*for font preview*/
 
- 
+
  .mc4wp-error {
     background-color: #F2DEDE;
     border-color: #EED3D7;
@@ -559,7 +559,7 @@ color:#fff!important;
      background: none repeat scroll 0 0 #FFFFFF!important;
      border: 1px solid #E2E2E2!important;
     border-radius: 3px;
-    box-shadow: 0 0 2px #000000!important;	
+    box-shadow: 0 0 2px #000000!important;
     color: #B7B7B7!important;
     display: block;
 	font-size: 13px;
@@ -570,8 +570,8 @@ color:#fff!important;
     white-space: nowrap;
 	line-height: 25px!important;
 	margin-bottom:6px;
-	
-	
+
+
 }
 
 a.button, a.comment-reply-link, #commentform #submit, .submit, input[type=submit], input.button, button.button {
@@ -672,7 +672,7 @@ label[for='billing_country']{
 #payment {
  margin-left: -12px;
  width: 105%
-  
+
 }
 #payment ul {
     padding: 0px;
@@ -717,7 +717,7 @@ border-radius:0px!important;
 .price del {
     color: #CCCCCC;
 	opacity: 1!important;
-    
+
 }
 
 .current_page_parent a{
@@ -725,9 +725,9 @@ color:#ffffff!important;
 }
 
  #container_block .textc{ color:#fff; }
- 
+
  .remove_pro{
- font-size:22px; font-weight:bolder; 
+ font-size:22px; font-weight:bolder;
  text-decoration:underline!important;
  display: block;
 float: right;
@@ -737,7 +737,7 @@ padding-left: 20px;
  .quantity .plus{
  display:none;
  }
- 
+
 .quantity .minus{
  display:none;
  }
@@ -752,8 +752,8 @@ padding-left: 20px;
     filter: alpha(opacity=80);
 	background:#fff;
 	height:200%;
-	
-	
+
+
 }
  /*----------Night css Start--------------*/
 
@@ -814,4 +814,4 @@ body.night #container_block  .woocommerce-error strong {
  body.night #container_block .wc-forward{
  background:none repeat scroll 0 0 #F26D7E!important;
  }
- 
+

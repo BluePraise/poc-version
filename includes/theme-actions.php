@@ -43,7 +43,7 @@ TABLE OF CONTENTS
  * is designed for, generally via the style.css stylesheet.
  */
 
-if ( ! isset( $content_width ) ) $content_width = 640;
+if ( ! isset( $content_width ) ) $content_width = 940;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

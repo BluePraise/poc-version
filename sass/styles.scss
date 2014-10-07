@@ -1,0 +1,39 @@
+// @import "bootstrap-compass";
+@import "bootstrap-variables";
+@import "bootstrap";
+
+@import "partials/_fonts.scss";
+
+body {
+  font-family: $font-family-BerninoRegular;
+}
+
+a {
+   font-family: BerninoSans-Web;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Header styling
+#top {
+  @extend .row;
+  background: black;
+  height: $navbar-height;
+}
+
+.logo,
+.search-box {
+  @extend .col-xs-12;
+  @extend .col-sm-2;
+  @extend .col-md-2;
+}
+
+.top-menu {
+  @extend .col-xs-12;
+  @extend .col-sm-8;
+  @extend .col-md-8;
+}
