@@ -298,9 +298,9 @@ $font-family-BerninoRegular:  BerninoSans-Web;
 //## Define your custom responsive grid.
 
 //** Number of columns in the grid.
-// $grid-columns:              12
+$grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-// $grid-gutter-width:         30px
+$grid-gutter-width:         10px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 // $grid-float-breakpoint:     $screen-sm-min
@@ -317,7 +317,7 @@ $font-family-BerninoRegular:  BerninoSans-Web;
 // $container-sm:                 $container-tablet
 
 // Medium screen / desktop
-// $container-desktop:            ((940px + $grid-gutter-width))
+$container-desktop:            ((940px + 15px));
 //** For `$screen-md-min` and up.
 // $container-md:                 $container-desktop
 
@@ -331,7 +331,7 @@ $font-family-BerninoRegular:  BerninoSans-Web;
 //##
 
 // Basics of a navbar
-$navbar-height:                    90px
+$navbar-height:                    90px;
 // $navbar-margin-bottom:             $line-height-computed
 // $navbar-border-radius:             $border-radius-base
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))

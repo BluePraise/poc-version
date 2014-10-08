@@ -24,7 +24,6 @@ global $woo_options, $woocommerce;
 <?php woo_meta(); ?>
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
-<link rel="stylesheet" href="http://fonts.typotheque.com/WF-001368-006969.css" type="text/css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
   <!--[if IE 7]>
@@ -108,30 +107,21 @@ global $woo_options, $woocommerce;
         <?php } ?>
 		</div> <!-- End of logo -->
 
-    <nav class="top-menu">
+    <nav class="top-menu" role="navigation">
 				<?php
+				if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
+          wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fr', 'theme_location' => 'primary-menu' ) );
+        } else {
+				?>
+        <ul id="main-nav" class="nav fr">
+          <?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
+          <li class="<?php echo $highlight; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
+          <?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
+        </ul><!-- /#nav -->
 
-					if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
-						wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => false, 'menu_id' => 'main-nav', 'menu_class' => 'mg_tpmenu', 'theme_location' => 'primary-menu' ) );
-					}
-          else {
+          <?php
+            }
 
-					?>
-
-				<ul id="main-nav" class="mg_tpmenu">
-				    <?php
-              if ( is_page() )
-                $highlight = 'page_item';
-              else $highlight = 'page_item current_page_item';
-            ?>
-							<li class="<?php echo $highlight; ?>">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a>
-              </li>
-							<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
-
-        </ul><!-- /nav -->
-
-						<?php }
 						if ( class_exists( 'woocommerce' ) ) {
 								echo '<ul class="mg_tpmenu">';
 								woocommerce_cart_link();
@@ -141,19 +131,7 @@ global $woo_options, $woocommerce;
 							}
 				     ?>
 
-                      <!-- Start Navigation fot Phione Device Only -->
-                     <!-- <div class="mobile_navigation">
-                      <select class="col-xs-12 visible-phone">
-                          <option selected="" value="#">Fonts &amp; Goods</option>
-                          <option value="#">Custom Design</option>
-                          <option value="#">Blog</option>
-                          <option value="#">About</option>
-                          <option value="#">Contact</option>
-                      </select>
-                      <!-- End Navigation fot Phione Device Only -->
-                      <!--<div class="clear"></div>
-                     </div>-->
-      </nav>
+      <?php woo_nav_after(); ?>
 
     <div class="search-box">
 		     <?php

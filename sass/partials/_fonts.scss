@@ -1,6 +1,5 @@
-@import url(http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-Regular);
-
 /* JAF Bernino Sans Web */
+
 @font-face{ font-family: BerninoSans-Web-Light;     font-style: normal; font-weight: normal; src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-Light");}
 @font-face{ font-family: BerninoSans-Web-Light;     font-style: italic; font-weight: normal; src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-LightItalic");}
 
@@ -8,7 +7,7 @@
   font-family: BerninoSans-Web;
   font-style: normal;
   font-weight: normal;
-  src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-Regular");
+  src: url("http://webfonts.justanotherfoundry.com/BerninoSans/BerninoSans-Web-Regular");
 }
 
 @font-face{
@@ -46,3 +45,13 @@
 @font-face{ font-family: BerninoSans-Web-Comp;          font-weight: bold;   src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-CompressedBold");}
 @font-face{ font-family: BerninoSans-Web-CompExtrabold; font-weight: bold;   src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-CompressedExtrabold");}
 
+@font-face {
+  font-family: "Lava Regular 3";
+  src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-001368-007151-001181-1401967208.eot");
+  src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-001368-007151-001181-1401967208.eot?#iefix")
+  format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-001368-007151-001181-1401967208.woff")
+  format("woff"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-001368-007151-001181-1401967208.svg#typotheque_webfonts_service") format("svg");
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}

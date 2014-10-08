@@ -1,0 +1,53 @@
+@import "bootstrap-variables";
+@import "bootstrap";
+
+@import "partials/_fonts.scss";
+
+@font-face{
+  font-family: BerninoSans-Web;
+  font-style: normal;
+  font-weight: normal;
+  src: url("http://webfonts.justanotherfoundry.com/BerninoSans/BerninoSans-Web-Regular");
+}
+
+@font-face{
+  font-family: BerninoSans-Web;
+  font-style: italic;
+  font-weight: normal;
+  src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-Italic");
+}
+
+body {
+  font-family: BerninoSans-Web;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Header styling
+#top {
+  @extend .row;
+  background: black;
+  height: $navbar-height;
+  li a {
+    font-family: BerninoSans-Web;
+  }
+}
+
+.logo,
+.search-box {
+  @extend .col-xs-12;
+  @extend .col-sm-2;
+  @extend .col-md-2;
+  padding: 35px 0 0;
+}
+
+// Main Menu
+.top-menu {
+  @extend .col-xs-12;
+  @extend .col-sm-8;
+  @extend .col-md-8;
+}

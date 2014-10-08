@@ -152,7 +152,7 @@ function typemafia_custom_scripts_styles() {
 
   // Inject typemafia css
   //
-  wp_register_style( 'typemafia-styles', get_stylesheet_directory_uri() . '/css/styles.css');
+  wp_register_style( 'typemafia-styles', get_stylesheet_directory_uri() . '/css/custom.css');
   wp_enqueue_style( 'typemafia-styles' );
 
   // Inject custom js in footer
