@@ -1,0 +1,8 @@
+$base-font-size: 14px;
+$base-line-height: 18px;
+@mixin font-size($size: $base-font-size, $line: $base-line-height){
+  font-size: $size + px;
+  line-height: $line + px;
+  font-size: ($size / 10) + rem;
+  line-height: ($line / 10) + rem;
+}

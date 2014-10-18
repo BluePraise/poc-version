@@ -108,10 +108,10 @@ global $woo_options, $woocommerce;
 		</div> <!-- End of logo -->
 
     <nav class="top-menu" role="navigation">
-				<?php
-				if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
-          wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fr', 'theme_location' => 'primary-menu' ) );
-        } else {
+			<?php
+				  if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
+            wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fr', 'theme_location' => 'primary-menu' ) );
+          } else {
 				?>
         <ul id="main-nav" class="nav fr">
           <?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
@@ -186,9 +186,5 @@ global $woo_options, $woocommerce;
 </header>
 <!--End Header-->
 
+ <?php woo_content_before(); ?>
 
-
-		<?php woo_header_before(); ?>
-        <?php woo_nav_before(); ?>
-        <?php woo_nav_after(); ?>
-		<?php woo_content_before(); ?>

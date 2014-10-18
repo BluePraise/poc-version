@@ -2,6 +2,7 @@
 @import "bootstrap";
 
 @import "partials/_fonts.scss";
+@import "partials/_tools.scss";
 
 @font-face{
   font-family: BerninoSans-Web;
@@ -16,9 +17,13 @@
   font-weight: normal;
   src: url("http://webfonts.justanotherfoundry.com/BerniniSans/BerninoSans-Web-Italic");
 }
+html {
+  font-size: 62.5%;
+}
 
 body {
   font-family: BerninoSans-Web;
+  @include font-size($base-font-size, $base-line-height);
 }
 
 ul {
@@ -27,27 +32,73 @@ ul {
   padding: 0;
 }
 
-// Header styling
-#top {
-  @extend .row;
-  background: black;
-  height: $navbar-height;
-  li a {
-    font-family: BerninoSans-Web;
+#wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.no-gutter [class*="md-2"] {
+  padding-left:0;
+  padding-right:0;
+}
+
+.col-md-2 {
+  width: 16.66666667%;
+  & .logo {
+    width: 12.70%;
   }
 }
 
-.logo,
+// Header styling
+#top {
+  @extend .row;
+  margin: 0;
+  padding: 0;
+  background: black;
+  height: $navbar-height;
+  // padding: 0 15px;
+  ul.nav {
+    font-family: BerninoSans-Web-Light;
+    li  {
+      margin-right: 22px;
+      &:last {
+        margin-right: 0;
+      }
+      a {
+        padding: 0;
+        @include font-size(18, 18);
+      }
+    }
+  }
+}
+
+.logo {
+  padding: 35px 0 0;
+  width: 180px;
+  float: left;
+}
 .search-box {
   @extend .col-xs-12;
   @extend .col-sm-2;
   @extend .col-md-2;
   padding: 35px 0 0;
+  input {
+    font-family: BerninoSans-Web-Light;
+  }
 }
 
 // Main Menu
 .top-menu {
-  @extend .col-xs-12;
-  @extend .col-sm-8;
-  @extend .col-md-8;
+  // @extend .col-xs-12;
+  // @extend .col-sm-8;
+  // @extend .col-md-8;
+  padding: 35px 0 0;
+  ul, div {
+    display: inline;
+  }
 }
+
+#main-nav {
+}
+
